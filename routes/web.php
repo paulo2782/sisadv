@@ -18,130 +18,121 @@ Route::get('/', ['as' => 'home', 'uses' => 'Controller@home']);
 // CLIENTES 
 //**************************************************************
 // CADASTRO DE CLIENTES 
-Route::get('/clientes/cadCliente', ['as' => 'cadCliente', 'uses' => 'ClientesController@index']);
+Route::get('/clientes/cadCliente', 'ClientesController@index')->name('cadCliente');
 // CONSULTAR CLIENTES
-Route::get('/clientes/conCliente', ['as' => 'conCliente', 'uses' => 'ClientesController@consultaCliente']);
+Route::get('/clientes/conCliente', 'ClientesController@consultaCliente')->name('conCliente');
 // SALVAR CLIENTES
-Route::post('/clientes/salvaCliente', ['as' => 'salvaCliente', 'uses' => 'ClientesController@salvaCliente']);
+Route::post('/clientes/salvaCliente', 'ClientesController@salvaCliente')->name('salvaCliente');
 // EXCLUIR CLIENTES
-Route::get('/clientes/excluirCliente/{id}', ['as' => 'excluirCliente', 'uses' => 'ClientesController@excluirCliente']);
+Route::get('/clientes/excluirCliente/{id}', 'ClientesController@excluirCliente')->name('excluirCliente');
 // EDITAR CLIENTES
-Route::get('/clientes/edtCliente/{id}', ['as' => 'edtCliente', 'uses' => 'ClientesController@editarCliente']);
+Route::get('/clientes/edtCliente/{id}', 'ClientesController@editarCliente')->name('edtCliente');
 // SALVA ALTERARAÇÃO CLIENTES
-Route::put('/clientes/alterarCliente/{id}', ['as' => 'alterarCliente', 'uses' => 'ClientesController@alterarCliente']);
+Route::put('/clientes/alterarCliente/{id}', 'ClientesController@alterarCliente')->name('alterarCliente');
 // VISUALIZA PARTE ADVERSA
-Route::get('/clientes/visCliente/{id}', ['as' => 'visCliente', 'uses' => 'ClientesController@visCliente']);
+Route::get('/clientes/visCliente/{id}', 'ClientesController@visCliente')->name('visCliente');
 //**************************************************************
 
 //**************************************************************
 // PARTE ADVERSA
 //**************************************************************
 // CADASTRO PARTE ADVERSA
-Route::get('/parteAdversa/cadParteAdversa', ['as' => 'cadParteAdversa', 'uses' => 'ParteAdversaController@index']);
+Route::get('/parteAdversa/cadParteAdversa', 'ParteAdversaController@index')->name('cadParteAdversa');
 // CONSULTAR PARTE ADVERSA
-Route::get('/parteAdversa/conParteAdversa', ['as' => 'conParteAdversa', 'uses' => 'ParteAdversaController@conParteAdversa']);
-Route::get('/parteAdversa/listaParteAdversa', ['as' => 'listaParteAdversa', 'uses' => 'ParteAdversaController@listaParteAdversa']);
+Route::get('/parteAdversa/conParteAdversa', 'ParteAdversaController@conParteAdversa')->name('conParteAdversa');
+Route::get('/parteAdversa/listaParteAdversa', 'ParteAdversaController@listaParteAdversa')->name('listaParteAdversa');
 // SALVAR PARTE ADVERSA
-Route::post('/parteAdversa/salvaParteAdversa', ['as' => 'salvaParteAdversa', 'uses' => 'ParteAdversaController@salvaParteAdversa']);
+Route::post('/parteAdversa/salvaParteAdversa', 'ParteAdversaController@salvaParteAdversa')->name('salvaParteAdversa');
 // EXCLUIR PARTE ADVERSA
-Route::get('/parteAdversa/excluirParteAdversa/{id}', ['as' => 'excluirParteAdversa', 'uses' => 'ParteAdversaController@excluirParteAdversa']);
+Route::get('/parteAdversa/excluirParteAdversa/{id}', 'ParteAdversaController@excluirParteAdversa')->name('excluirParteAdversa');
 // EDITAR PARTE ADVERSA
-Route::get('/parteAdversa/edtParteAdversa/{id}', ['as' => 'edtParteAdversa', 'uses' => 'ParteAdversaController@editarParteAdversa']);
+Route::get('/parteAdversa/edtParteAdversa/{id}', 'ParteAdversaController@editarParteAdversa')->name('editarParteAdversa');
 // SALVA ALTERAÇÃO PARTE ADVERSA
-Route::put('/parteAdversa/alterarParteAdversa/{id}', ['as' => 'alterarParteAdversa', 'uses' => 'ParteAdversaController@alterarParteAdversa']);
+Route::put('/parteAdversa/alterarParteAdversa/{id}', 'ParteAdversaController@alterarParteAdversa')->name('alterarParteAdversa');
 // VISUALIZA PARTE ADVERSA
-Route::get('/parteAdversa/visParteAdversa/{id}', ['as' => 'visParteAdversa', 'uses' => 'ParteAdversaController@visParteAdversa']);
-//**************************************************************
-
+Route::get('/parteAdversa/visParteAdversa/{id}', 'ParteAdversaController@visParteAdversa')->name('visParteAdversa');
+ 
 //**************************************************************
 // RAMO DO DIREITO
 //**************************************************************
 // CADASTRO RAMO DO DIREITO
-Route::get('/ramoDireito/cadRamoDireito', ['as' => 'cadRamoDireito', 'uses' => 'RamosDireitoController@index']);
+Route::get('/ramoDireito/cadRamoDireito', 'RamosDireitoController@index')->name('cadRamoDireito');
 
 // SALVA RAMO DO DIREITO
-Route::post('/ramoDireito/salvaRamoDireito', ['as' => 'salvaRamoDireito', 'uses' => 'RamosDireitoController@salvaRamoDireito']);
+Route::post('/ramoDireito/salvaRamoDireito', 'RamosDireitoController@salvaRamoDireito')->name('salvaRamoDireito');
 
 // MONTA LISTA
-Route::get('/ramoDireito/listaRamoDireito', ['as' => 'listaRamoDireito', 'uses' => 'RamosDireitoController@listaRamoDireito']);
+Route::get('/ramoDireito/listaRamoDireito', 'RamosDireitoController@listaRamoDireito')->name('listaRamoDireito');
 
 // EXCLUI RAMO DO DIREITO
-Route::get('/ramoDireito/excluiRamoDireito/{id}',  ['as' => 'excluiRamoDireito', 'uses' => 'RamosDireitoController@excluiRamoDireito']);
+Route::get('/ramoDireito/excluiRamoDireito/{id}', 'RamosDireitoController@excluiRamoDireito')->name('excluiRamoDireito');
 
 // EDITAR RAMO DO DIREITO
-Route::get('/ramoDireito/editarRamoDireito/{id}', ['as' => 'editarRamoDireito', 'uses' => 'RamosDireitoController@editarRamoDireito']);
+Route::get('/ramoDireito/editarRamoDireito/{id}', 'RamosDireitoController@editarRamoDireito')->name('editarRamoDireito');
 
 // SALVA ALTERARAÇÃO RAMO DO DIREITO
-Route::put('/ramoDireito/alterarRamoDireito/{id}', ['as' => 'alterarRamoDireito', 'uses' => 'RamosDireitoController@alterarRamoDireito']);
-//**************************************************************
-
+Route::put('/ramoDireito/alterarRamoDireito/{id}', 'RamosDireitoController@alterarRamoDireito')->name('alterarRamoDireito');
 
 //**************************************************************
 // CLIENTES E PROCESSOS
 //**************************************************************
 // ABRIR PROCESSO
-Route::get('/clientesProcessos/abrirProcesso',['as' => 'abrirProcesso', 'uses' => 'ClientesProcessoController@abrirProcesso']);
+Route::get('/clientesProcessos/abrirProcesso', 'ClientesProcessoController@abrirProcesso')->name('abrirProcesso');
 // CADASTRO DE PROCESSOS
-Route::get('/clientesProcessos/cadCliProc/{idProcesso?}/{pi?}/{mesano?}/{idCliente?}/{idParteAdv?}/{idRamoDireito?}', ['as' => 'cadCliProc', 'uses' =>   'ClientesProcessoController@cadCliProc']);
+Route::get('/clientesProcessos/cadCliProc/{idProcesso?}/{pi?}/{mesano?}/{idCliente?}/{idParteAdv?}/{idRamoDireito?}', 'ClientesProcessoController@cadCliProc')->name('cadCliProc');
 // SALVAR ABRIR PROCESSO
-Route::post('/clientesProcessos/salvarAbrirProcesso', ['as' => 'salvarAbrirProcesso', 'uses' => 'ClientesProcessoController@salvarAbrirProcesso']);
+Route::post('/clientesProcessos/salvarAbrirProcesso', 'ClientesProcessoController@salvarAbrirProcesso')->name('salvarAbrirProcesso');
 // BUSCA CLIENTES
-Route::get('/clientesProcessos/buscaClientes', ['as' => 'buscaClientes', 'uses' => 'ClientesProcessoController@buscaClientes']);
+Route::get('/clientesProcessos/buscaClientes', 'ClientesProcessoController@buscaClientes')->name('buscaClientes');
 // SELECIONA CLIENTE
-Route::get('/clientesProcessos/selecionaClientes/{id}', ['as' => 'selecionaClientes', 'uses' => 'ClientesProcessoController@selecionaClientes']);
+Route::get('/clientesProcessos/selecionaClientes/{id}', 'ClientesProcessoController@selecionaClientes')->name('selecionaClientes');
 // BUSCA CLIENTES
-Route::get('/clientesProcessos/buscaParteAdversa', ['as' => 'buscaParteAdversa', 'uses' => 'ClientesProcessoController@buscaParteAdversa']);
+Route::get('/clientesProcessos/buscaParteAdversa', 'ClientesProcessoController@buscaParteAdversa')->name('buscaParteAdversa');
 // SELECIONA PARTE ADVERSA
-Route::get('/clientesProcessos/selecionaParteAdversa/{id}/{idCliente?}',  ['as' => 'selecionaParteAdversa', 'uses' => 'ClientesProcessoController@selecionaParteAdversa']); 
+Route::get('/clientesProcessos/selecionaParteAdversa/{id}/{idCliente?}', 'ClientesProcessoController@selecionaParteAdversa')->name('selecionaParteAdversa'); 
 // BUSCA PROCESSOS
-Route::get('/clientesProcessos/processosAbertos/{rota?}', ['as' => 'processosAbertos', 'uses' => 'ClientesProcessoController@processosAbertos']);
+Route::get('/clientesProcessos/processosAbertos/{rota?}', 'ClientesProcessoController@processosAbertos')->name('processosAbertos');
 // CONCLUI PROCESSO
-Route::put('/clientesProcessos/concluiProcesso/{id?}', ['as' => 'concluiProcesso', 'uses' => 'ClientesProcessoController@concluiProcesso']);
-//**************************************************************
-
-
+Route::put('/clientesProcessos/concluiProcesso/{id?}', 'ClientesProcessoController@concluiProcesso')->name('concluiProcesso');
 
 //**************************************************************
 // BUSCA RAMO DIREITO
 //**************************************************************
-Route::get('/clientesProcessos/buscaRamoDireito',  ['as' => 'buscaRamoDireito', 'uses' => 'ClientesProcessoController@buscaRamoDireito']); 
+Route::get('/clientesProcessos/buscaRamoDireito',  'ClientesProcessoController@buscaRamoDireito')->name('buscaRamoDireito'); 
 // SELECIONA RAMO DIREITO
-Route::get('/clientesProcessos/selecionaRamoDireito/{idCliente?}/{idParteAdv?}/{idRamoDireito?}',  ['as' => 'selecionaRamoDireito', 'uses' => 'ClientesProcessoController@selecionaRamoDireito']); 
-//**************************************************************
+Route::get('/clientesProcessos/selecionaRamoDireito/{idCliente?}/{idParteAdv?}/{idRamoDireito?}', 'ClientesProcessoController@selecionaRamoDireito')->name('selecionaRamoDireito'); 
 
 //**************************************************************
 // TIPOS DE HONORARIOS
 //**************************************************************
 // CADASTRO TIPO DE HONORARIO
-Route::get('/honorarios/cadHonorario',  ['as' => 'cadHonorario', 'uses' => 'HonorarioController@cadHonorario']); 
+Route::get('/honorarios/cadHonorario',  'HonorarioController@cadHonorario')->name('cadHonorario'); 
 //
 // SALVA TIPO DE HONORARIO
-Route::post('/honorarios/salvaHonorario', ['as' => 'salvaHonorario', 'uses' => 'HonorarioController@salvaHonorario']);
+Route::post('/honorarios/salvaHonorario', 'HonorarioController@salvaHonorario')->name('salvaHonorario');
 // EXCLUIR TIPO DE HONORARIO
-Route::get('/honorarios/excluiHonorario/{id?}', ['as' => 'excluiHonorario', 'uses' => 'HonorarioController@excluiHonorario']);
+Route::get('/honorarios/excluiHonorario/{id?}', 'HonorarioController@excluiHonorario')->name('excluiHonorario');
 // LISTA TIPO DE HONORARIO
-Route::get('/honorarios/listaHonorario', ['as' => 'listaHonorario', 'uses' => 'HonorarioController@listaHonorario']);
+Route::get('/honorarios/listaHonorario', 'HonorarioController@listaHonorario')->name('listaHonorario');
 // CALCULA HONORARIO
-Route::get('/honorarios/resumoHonorario/{id_processo?}', ['as' => 'resumoHonorario', 'uses' => 'HonorarioController@resumoHonorario']);
+Route::get('/honorarios/resumoHonorario/{id_processo?}', 'HonorarioController@resumoHonorario')->name('resumoHonorario');
 
-//**************************************************************
 
 //**************************************************************
 // RECEITAS
 //**************************************************************
 //
 // BUSCA HONORARIO PROCESSO
-Route::get('/receita/BuscaHonProcesso/{id?}', ['as' => 'BuscaHonProcesso', 'uses' => 'ReceitaController@BuscaHonProcesso']);
+Route::get('/receita/BuscaHonProcesso/{id?}', 'ReceitaController@BuscaHonProcesso')->name('BuscaHonProcesso');
 // 
-Route::post('/receita/salvaReceita', ['as' => 'salvaReceita', 'uses' => 'ReceitaController@salvaReceita']);
-//**************************************************************
+Route::post('/receita/salvaReceita', 'ReceitaController@salvaReceita')->name('salvaReceita');
 
 //**************************************************************
 // RELATÓRIOS
 //**************************************************************
 // RELATÓRIO DE CLIENTES
 //
-Route::get('/relatorios/clientes/relClientes', ['as' => 'relClientes', 'uses' => 'RelatorioClientesController@relClientes']);
+Route::get('/relatorios/clientes/relClientes', 'RelatorioClientesController@relClientes')->name('relClientes');
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

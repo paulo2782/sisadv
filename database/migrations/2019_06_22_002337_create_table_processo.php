@@ -16,6 +16,10 @@ class CreateTableProcesso extends Migration
         Schema::create('processos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('nprocesso',150)->nullable();
+            $table->string('pi',150)->nullable();
+            $table->string('mesanoreferencia',150)->nullable();
+            $table->string('pigerado',150)->nullable();
             $table->integer('idcliente')->nullable();
             $table->integer('idparteadversa')->nullable();
             $table->integer('idramodireito')->nullable();

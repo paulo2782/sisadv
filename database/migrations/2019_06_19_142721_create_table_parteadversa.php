@@ -17,15 +17,20 @@ class CreateTableParteadversa extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('NOME',100)->nullable();
+            $table->integer('ID_ESTADO')->nullable();
+            $table->integer('ID_CIDADE')->nullable();
+            $table->string('ENDERECO',250)->nullable();
+            $table->string('NUMERO',15)->nullable();
+            $table->string('BAIRRO',100)->nullable();
             $table->string('CPF_CNPJ',14)->nullable();
             $table->string('RG',15)->nullable();
             $table->string('RAMO_ATUACAO',150)->nullable();     
             $table->string('RESPONSAVEL',150)->nullable();     
-            $table->string('EMAIL',150)->nullable();                 
+            $table->string('EMAIL',150)->nullable();     
             $table->string('PROFISSAO',100)->nullable();
             $table->string('ESTADO_CIVIL',25)->nullable();
             $table->string('FONE',14)->nullable();
-            $table->string('WHATSAPP',14)->nullable();
+            $table->string('WHATSAPP',14)->nullable();     
         });
     }
 

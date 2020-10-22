@@ -12,7 +12,7 @@ use DB;
 class ClientesProcessoController extends Controller
 {
 	public function cadCliProc(Request $request){
-
+		
 		$idProcesso = $request->idProcesso;
     	$nProcesso  = $request->nProcesso;
     	$idCliente  = $request->idCliente;
@@ -71,6 +71,7 @@ class ClientesProcessoController extends Controller
  		 $result = $request->get('query');
 
 		 $query = Clientes::where('NOME','LIKE',$result.'%')->get();
+
 		 $dados = $query->all();
 
 		 return view('clientesProcessos/listaClientes',compact('dados'));
@@ -123,8 +124,8 @@ class ClientesProcessoController extends Controller
 // BUSCA PROCESSO
 //////////////////
 //
-	public function processosAbertos(Request $request){
-		$busca = $request->busca;
+	public function processosAbertos(){
+
 		$processos = DB::select("select processos.id as idProcesso, processos.nprocesso as nProcesso,
 								processos.pi as PI, processos.mesanoreferencia as MesAno, 
 								processos.OBJETO, processos.tiporeferencia, 
@@ -132,17 +133,10 @@ class ClientesProcessoController extends Controller
 								ramodireitos.id as idRamoDireito,
 								parteadversas.id as idParteAdv, parteadversas.nome as nomeParteAdversa, 
 								clientes.id as idCliente, clientes.nome as NOME 
-
 								from processos 
 								INNER JOIN clientes      ON processos.idcliente      = clientes.id  
 								INNER JOIN ramodireitos  ON processos.idramodireito  = ramodireitos.id
 								INNER JOIN parteadversas ON processos.idparteadversa = parteadversas.id
-								where processos.nprocesso like '$busca%' or
-								processos.objeto like '%$busca%' or
-								processos.pigerado like '%$busca%' or 
-								clientes.nome like '%$busca%' or 
-								parteadversas.nome like '%$busca%' 
-
 								order by processos.id desc
 		");
 		

@@ -11,7 +11,7 @@ $(document).ready(function(){
 	 $('#btnSalvar').click(function(){
 	 	if(confirm('Confirma Salvar Registro ?')) 
 	 	{
-	 		alert('Registro Salvo!');
+	 		// alert('Registro Salvo!');
 	 	}else{
 			return false;
 	 	}

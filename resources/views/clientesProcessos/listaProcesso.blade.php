@@ -27,7 +27,7 @@
  		'idRamoDireito' => $idRamoDireito
  		 ]) }}">
  		 <span class="fas fa-check badge-pill badge-success" title="Seleciona Processo"> </span> </td></a>
- 	<td><a href="{{ route('BuscaHonProcesso',  $iProcesso->idProcesso) }}"><span class="fas fa-money-check-alt badge-pill badge-warning " title="Honorários"></span> 
+ 	<!-- <td><a href="{{ route('BuscaHonProcesso',  $iProcesso->idProcesso) }}"><span class="fas fa-money-check-alt badge-pill badge-warning " title="Honorários"></span>  -->
  <tr>
 @endforeach
 

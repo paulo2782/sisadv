@@ -17,6 +17,7 @@
 <div class="container">
 <div class="card card text-black mb-3">
 	<div class="card-block">
+		<span id="message">@foreach($errors->all() as $error) <p><b>{{ $error }}</b></p> @endforeach</span>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm|md|lg|xl-1-12|auto form-control">

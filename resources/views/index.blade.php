@@ -54,7 +54,7 @@
                         </li>
                     </ul>
 
-                <li>
+<!--                 <li>
                     <a href="#pageSubmenuHonorarios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Honorários</a>
                     <ul class="collapse list-unstyled" id="pageSubmenuHonorarios">
                        <li>
@@ -63,7 +63,7 @@
                     </ul>
 
                 </li>
-                <li>
+ --><!--                 <li>
                     <a href="#pageSubmenuRelatorios" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
                     <ul class="collapse list-unstyled" id="pageSubmenuRelatorios">
                        <li>
@@ -75,7 +75,7 @@
                     </ul>
                 </li>
 
-
+ -->
             </ul>
 
             <ul class="list-unstyled CTAs">

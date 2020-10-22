@@ -17,6 +17,11 @@ class CreateTableCliente extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('NOME',100)->nullable();
+            $table->integer('ID_ESTADO')->nullable();
+            $table->integer('ID_CIDADE')->nullable();
+            $table->string('ENDERECO',250)->nullable();
+            $table->string('NUMERO',15)->nullable();
+            $table->string('BAIRRO',100)->nullable();
             $table->string('CPF_CNPJ',14)->nullable();
             $table->string('RG',15)->nullable();
             $table->string('RAMO_ATUACAO',150)->nullable();     

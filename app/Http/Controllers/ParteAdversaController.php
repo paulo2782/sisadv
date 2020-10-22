@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\ParteAdversas;
 
 class ParteAdversaController extends Controller
@@ -20,9 +21,18 @@ class ParteAdversaController extends Controller
                          orwhere('WHATSAPP','LIKE','%'.$result.'%')->paginate(5);      
      return view('parteAdversa/conParteAdversa',compact('dados','result'));
     }
-    public function salvaParteAdversa(request $dados){
-    	$dado = $dados->all();
-    	ParteAdversas::create($dados->all());
+    public function salvaParteAdversa(request $request){
+        $validator = Validator::make($request->all(),[
+            'nome'=>'required',
+            'cpf_cnpj'=>'required|unique:clientes'
+        ]);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+
+
+    	$dado = $request->all();
+    	ParteAdversas::create($request->all());
     	return view('parteAdversa/cadParteAdversa');
     }
 	public function excluirParteAdversa($dado){

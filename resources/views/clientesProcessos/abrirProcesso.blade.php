@@ -185,11 +185,14 @@
 $(document).ready(function() {
 	$('#buscaClientesTexto').keyup(function(){
 		query = document.getElementById('buscaClientesTexto').value;
+
+
 		$.ajax({			
 			url: "{{ route('buscaClientes') }}",
 			method: 'GET',
 			data:{query:query},	
 			success:function(data){
+
 				$('#listaClientes').html(data);
 			},
 			error:function(errorThrown){
